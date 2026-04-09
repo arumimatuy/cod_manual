@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【職員用】コドモン運用マニュアル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f3f4f6; }
+        .toc-link:hover { color: #2563eb; text-decoration: underline; }
+        .section-card { background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); padding: 1.5rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.25rem; font-weight: 700; color: #1e3a8a; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .image-placeholder { background-color: #f3f4f6; border: 2px dashed #9ca3af; border-radius: 0.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6b7280; padding: 2rem; margin: 1rem 0; text-align: center; }
+        .highlight-box { background-color: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; border-radius: 0.25rem; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; }
+        th { background-color: #f9fafb; font-weight: 600; color: #374151; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+    
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-8">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-2">【職員用】コドモン運用マニュアル（4月本格稼働版）</h1>
+        <p class="text-blue-100">幌北中央保育園 内部資料 | 最終更新: 2026年4月</p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-lg shadow-md sticky top-4">
+                <h2 class="font-bold text-lg mb-4 text-gray-700">目次</h2>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#sec1" class="toc-link flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i> 1. 保護者連絡の受付ルール</a></li>
+                    <li><a href="#sec2" class="toc-link flex items-center gap-2"><i data-lucide="sun" class="w-4 h-4"></i> 2. 朝のデイリーボード管理</a></li>
+                    <li><a href="#sec3" class="toc-link flex items-center gap-2"><i data-lucide="bell-ring" class="w-4 h-4"></i> 3. アラート対応ガイド</a></li>
+                    <li><a href="#sec4" class="toc-link flex items-center gap-2"><i data-lucide="smartphone" class="w-4 h-4"></i> 4. 登降園打刻の管理と対応</a></li>
+                    <li><a href="#sec5" class="toc-link flex items-center gap-2"><i data-lucide="thermometer" class="w-4 h-4"></i> 5. 病欠連絡の確認ポイント</a></li>
+                    <li><a href="#sec6" class="toc-link flex items-center gap-2"><i data-lucide="send" class="w-4 h-4"></i> 6. お知らせ・配信ルール</a></li>
+                    <li><a href="#sec7" class="toc-link flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> 7. 紙運用が続く項目</a></li>
+                    <li><a href="#sec8" class="toc-link flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i> 8. 保護者サポート・定期案内</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lg:col-span-3">
+
+            <!-- Section 1 -->
+            <section id="sec1" class="section-card">
+                <h2 class="section-title"><i data-lucide="clock"></i> 1. 保護者連絡の受付ルール</h2>
+                <div class="mb-4">
+                    <span class="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded-full text-sm mb-2">受付期限：当日朝 8:45 まで</span>
+                    <p class="text-sm text-gray-600">連絡帳・欠席・遅刻連絡はすべて8:45がアプリの締め切りです。</p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="text-sm">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">連絡の種類</th>
+                                <th class="w-1/3 text-center">8:45 まで</th>
+                                <th class="w-1/3 text-center text-red-600">8:45 以降</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>欠席・遅刻</td>
+                                <td class="text-center font-bold text-blue-600 bg-blue-50">アプリで受付</td>
+                                <td class="text-center font-bold bg-red-50 text-red-600">電話<br><span class="text-xs font-normal text-gray-600">(基本9:15までに)</span></td>
+                            </tr>
+                            <tr>
+                                <td>連絡帳</td>
+                                <td class="text-center font-bold text-blue-600 bg-blue-50">アプリで受付<br><span class="text-xs font-normal text-gray-600">(8:45未着はリマインド送信)</span></td>
+                                <td class="text-center text-gray-400 bg-gray-50">—</td>
+                            </tr>
+                            <tr>
+                                <td>急なお迎え変更</td>
+                                <td colspan="2" class="text-center font-bold text-red-600 bg-red-50">常に電話のみ</td>
+                            </tr>
+                            <tr>
+                                <td>当日の時間外保育</td>
+                                <td colspan="2" class="text-center font-bold text-red-600 bg-red-50">常に電話のみ</td>
+                            </tr>
+                            <tr>
+                                <td>緊急・重要事項</td>
+                                <td colspan="2" class="text-center font-bold text-red-600 bg-red-50">常に電話のみ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="image-placeholder">
+                    <i data-lucide="image" class="w-8 h-8 mb-2"></i>
+                    <span>📷 [img_renraku_list.png] <br>保護者連絡一覧画面（カテゴリ・確認済みボタンの位置）</span>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="sec2" class="section-card">
+                <h2 class="section-title"><i data-lucide="sun"></i> 2. 朝のデイリーボード連絡管理フロー</h2>
+                <p class="mb-4 text-sm">毎朝の連絡確認と所在確認は、以下の3段階の連携で行います。</p>
+
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-400 pl-4 py-2 bg-blue-50">
+                        <h3 class="font-bold text-blue-800">① 7:00 〜 9:00 【担当：クラス保育士】</h3>
+                        <ul class="list-disc ml-5 text-sm mt-1">
+                            <li>8:45までの連絡内容を確認し、「確認済」にする。</li>
+                            <li>必要な追加対応を行う（園長に連絡送信を依頼するなど）。</li>
+                            <li><span class="font-semibold text-gray-700">※9時頃に印刷します。</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-400 pl-4 py-2 bg-green-50">
+                        <h3 class="font-bold text-green-800">② 9:00 〜 9:30 【担当：チェック番】</h3>
+                        <ul class="list-disc ml-5 text-sm mt-1">
+                            <li>確認済になっていない連絡、または締切以降に入った連絡をクラスに確認して対応する。</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-orange-400 pl-4 py-2 bg-orange-50">
+                        <h3 class="font-bold text-orange-800">③ 9:15 〜 9:30 【担当：チェック番】</h3>
+                        <ul class="list-disc ml-5 text-sm mt-1">
+                            <li>デイリーボードで「在籍人数」「欠席」「登園中」「所在確認アラート」を確認。</li>
+                            <li><span class="font-bold underline">打刻漏れ園児の確認：</span> 登園が確認できた未打刻園児は手動打刻する。</li>
+                            <li><span class="text-red-600">※注意：</span>早い時間は「未登園」「連絡確認前」「未打刻」が混在するため留意すること。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_dailyboard_overview.png]<br>デイリーボード全体画面<br>（在籍数・アラート数など）</span>
+                    </div>
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_bar_graph_stamped_vs_unstamped.png]<br>園児一覧の棒グラフ<br>（薄い棒グラフ＝未打刻）</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="sec3" class="section-card">
+                <h2 class="section-title"><i data-lucide="bell-ring"></i> 3. 所在確認アラート対応ガイド</h2>
+                <p class="mb-4 text-sm">9:30に下記の状態の家庭に「登園予定のご確認」メッセージが配信されます。</p>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                        <h4 class="font-bold text-gray-700">1. 未登園・遅刻</h4>
+                        <p class="text-sm text-gray-600 mt-1">通常対応▶「登園予定のご確認」メッセージに対して保護者からの折り返し連絡がなければ架電する。</p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                        <h4 class="font-bold text-gray-700">2. 連絡帳未反映（8:45以降の連絡）</h4>
+                        <p class="text-sm text-gray-600 mt-1">コドモンで欠席連絡はあるが、職員側で未対応の場合にアラートが送信される。当日の休み連絡（8:45以降）は基本「電話連絡」を求める。ただし、職員がコドモン入力に随時対応できる状況であれば対応してOK。 ※締切以前の休み連絡にアラートが飛ばないようにしましょう。</p>
+                    </div>
+                    <div class="bf-gray-50 p-3 rounded border border-gray-200">
+                        <h4 class="font-bold text-gray-700">3. 休み連絡未登録</h4>
+                        <p class="text-sm text-gray-600 mt-1">
+                            <span class="text-red-600 font-bold">「紙には書いているがコドモン未登録」がこのパターンです。</span><br>
+                            通常対応▶「登園予定のご確認」メッセージに対して保護者からの折り返し連絡がなければ架電する。紙と見比べて職員側で「都合欠」の代理登録はせず、連絡対応時に「お手数ですがどちらもお願いします」と保護者へ協力を依頼してください。
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                        <h4 class="font-bold text-red-600">4. 朝の打刻漏れ（重要！）</h4>
+                        <p class="text-sm text-gray-600 mt-1">
+                            9:30時点で現場の実数とずれると安全管理上の問題になります。いる/いないの確認は朝の必須作業なので、朝の代理入力はOK。降園時などに保護者には「必ず打刻して」と伝え、定期的なお便りでも周知を検討。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="image-placeholder mt-4">
+                    <i data-lucide="image" class="w-8 h-8 mb-2"></i>
+                    <span>📷 [img_alert_display.png] <br>所在確認アラートの表示箇所</span>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="sec4" class="section-card">
+                <h2 class="section-title"><i data-lucide="smartphone"></i> 4. 登降園打刻の管理と対応</h2>
+                
+                <h3 class="font-bold text-gray-700 mb-2 mt-4 border-l-4 border-blue-500 pl-2">基本ルール</h3>
+                <ul class="list-disc ml-5 text-sm space-y-1 mb-4">
+                    <li>保護者がアプリのQRコードを園入口のiPadにかざして打刻する。</li>
+                    <li><span class="text-red-600 font-bold">打刻操作は必ず保護者（大人）が行う。</span>お子さんへの操作は禁止。</li>
+                    <li>日中登降園用iPadには常時充電ケーブルを設置しています。</li>
+                    <li>兄弟姉妹のお休み時は、一覧画面でお休みする子のチェックを外して打刻する。</li>
+                </ul>
+
+                <h3 class="font-bold text-gray-700 mb-2 mt-4 border-l-4 border-blue-500 pl-2">アプリなしの祖父母・外部スタッフ（デイ・習い事）の送迎</h3>
+                <ul class="list-disc ml-5 text-sm space-y-1 mb-4">
+                    <li>事務室内のiPadで<span class="font-bold text-blue-600">「コドモン登降園」アプリ</span>を使用して手動打刻を行います。</li>
+                    <li class="text-red-600 font-bold">※注意：コドモン管理画面（ブラウザ）は個人情報の塊です。触っていいのは職員のみです。</li>
+                </ul>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [photo_ipad_entrance.jpg]<br>園入口のiPad＋充電ケーブル</span>
+                    </div>
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_codomon_toukoen_app.png]<br>事務室iPadの「コドモン登降園」画面<br>（管理画面との違い）</span>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3 class="font-bold text-red-700 mb-2 flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                        降園時の打刻漏れ対応について（重要）
+                    </h3>
+                    <div class="text-sm space-y-2">
+                        <p>降園時の打刻漏れは、自動的に<span class="font-bold">「時間外保育」</span>扱いとなります。職員による<span class="font-bold text-red-600 underline">善意の手動修正は原則禁止</span>です。</p>
+                        
+                        <div class="bg-white p-3 rounded border border-red-200 mt-2">
+                            <h4 class="font-bold text-gray-800">保護者からの連絡があった場合のフロー</h4>
+                            <p class="mt-1">
+                                <strong>17:59までの連絡：</strong> 「コドモン＞その他連絡」または電話で連絡があった場合のみ、職員が手動修正を行います。<br>
+                                <strong>18:00以降の連絡：</strong> 修正不可。時間外保育として処理します。
+                            </p>
+                        </div>
+                        <p class="text-gray-600 mt-2">※電話で打刻漏れの連絡を受けた際は対応OKですが、<strong class="text-blue-700">「伝達漏れ防止のため、なるべくコドモンの『その他連絡』からご連絡をお願いします」</strong>と必ず伝えてください（送信履歴が残り、ミス時の確認ができるため）。</p>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-gray-700 mb-2 mt-4 border-l-4 border-blue-500 pl-2">QR多重読み込みのエラー修正</h3>
+                <p class="text-sm mb-2">QRコードを何度も読み込んだ園児がいると、誤って「退園」になり人数が合わない場合があります。在園時間の棒グラフで異常を検知し、退園時刻をクリアして修正してください。</p>
+                <div class="image-placeholder !p-4">
+                    <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                    <span class="text-sm">📷 [img_clear_departure_time.png]<br>退園時刻のクリア（修正）操作画面</span>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="sec5" class="section-card">
+                <h2 class="section-title"><i data-lucide="thermometer"></i> 5. 病欠連絡の確認ポイント</h2>
+                <p class="text-sm mb-4">アプリで病欠連絡を受けた際、備考欄に以下の3点が記載されているか確認してください。未入力や不十分な場合は、園から電話で状況を確認します。</p>
+                
+                <div class="bg-white border border-gray-300 rounded-lg overflow-hidden">
+                    <table class="w-full text-sm">
+                        <tr class="border-b">
+                            <th class="w-1/3 bg-gray-50 p-3">【経過】</th>
+                            <td class="p-3">いつ頃から、どのような症状が出ているか</td>
+                        </tr>
+                        <tr class="border-b">
+                            <th class="w-1/3 bg-gray-50 p-3">【現在の状況】</th>
+                            <td class="p-3">熱の有無、現在の症状の程度、元気・食欲など</td>
+                        </tr>
+                        <tr>
+                            <th class="w-1/3 bg-gray-50 p-3">【受診予定】</th>
+                            <td class="p-3">受診済み / 本日受診予定 / 様子見 など</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="image-placeholder mt-4">
+                    <i data-lucide="image" class="w-8 h-8 mb-2"></i>
+                    <span>📷 [img_byouketsu_bikou_good_bad.png] <br>病欠備考欄の良い例・悪い例</span>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="sec6" class="section-card">
+                <h2 class="section-title"><i data-lucide="send"></i> 6. お知らせ・ドキュメンテーション配信ルール</h2>
+                
+                <h3 class="font-bold text-gray-700 mb-2 border-l-4 border-blue-500 pl-2">園長不在時の「お知らせ」対応</h3>
+                <ul class="list-disc ml-5 text-sm space-y-2 mb-4">
+                    <li><span class="font-bold text-red-600">忘れ物など、急ぎの連絡の場合：</span><br>「緊急送信機能」を使って配信してOK。事後報告で「配信しました」と伝えてください。</li>
+                    <li><span class="font-bold text-gray-700">早急ではない場合：</span><br>今まで通り、園長デスクのiPadから「承認よろしく」メッセージ等で依頼してください。</li>
+                    <li>※忘れ物のお知らせなどは「テンプレート」が登録済みです。追加したいテンプレート文言があれば園長へ。</li>
+                </ul>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_emergency_send_button.png]<br>緊急送信機能ボタンの位置</span>
+                    </div>
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_template_list.png]<br>テンプレートの選択画面</span>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-gray-700 mb-2 border-l-4 border-blue-500 pl-2">ドキュメンテーションの配信先指定（高度な使い方）</h3>
+                <p class="text-sm mb-2">複数の活動を同時に配信する場合、配信先を細かく分けて送ることができます。</p>
+                <ul class="list-disc ml-5 text-sm space-y-1 mb-4 text-gray-600">
+                    <li>例：特定の活動の写真は「参加者のみ」に配信</li>
+                    <li>例：クラス全体への追加のお知らせは「クラス全体」に配信</li>
+                </ul>
+                <div class="image-placeholder !m-0 !p-4">
+                    <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                    <span class="text-sm">📷 [img_documentation_target.png]<br>配信先の選択設定画面</span>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="sec7" class="section-card">
+                <h2 class="section-title"><i data-lucide="file-text"></i> 7. 引き続き「紙」で運用する項目</h2>
+                <p class="text-sm mb-4">以下の項目はアプリでは受け付けていません。保護者から問い合わせがあった場合は、紙での記入を案内してください。</p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1 bg-white border border-gray-200 p-4 rounded-lg flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                            <i data-lucide="calendar-plus" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">土曜・時間外保育の申込</h4>
+                            <p class="text-sm text-gray-600 mt-1">園内の「紙のボード」へ記入するよう案内。</p>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white border border-gray-200 p-4 rounded-lg flex items-start gap-4">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600">
+                            <i data-lucide="calendar-days" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">クラスの休み予定表</h4>
+                            <p class="text-sm text-gray-600 mt-1">毎月クラスに掲示している予定表への記入を案内。事前にわかっているお休みは「アプリ」と「紙」両方必要。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="sec8" class="section-card">
+                <h2 class="section-title"><i data-lucide="users"></i> 8. 保護者サポート・定期案内</h2>
+                
+                <h3 class="font-bold text-gray-700 mb-2 border-l-4 border-blue-500 pl-2">店頭での問い合わせ対応</h3>
+                <p class="text-sm mb-4">操作がわからない保護者には、画面を一緒に見ながらサポートしてください。<br>家族（祖父母など）の追加は、園発行IDではなく<span class="font-bold text-blue-600">「パパ・ママのアプリからの招待機能」</span>を使用します。</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_app_registration_steps.png]<br>新規登録の画面</span>
+                    </div>
+                    <div class="image-placeholder !m-0 !p-4">
+                        <i data-lucide="image" class="w-6 h-6 mb-2"></i>
+                        <span class="text-sm">📷 [img_family_invite.png]<br>家族の設定・招待メール画面</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                    <h4 class="font-bold text-gray-800 mb-2">保護者向けリンク集（ご案内に活用）</h4>
+                    <p class="text-sm">URL: <code>https://x.gd/RHI8D</code><br>FAQや詳しい使い方はこちらにまとまっています。</p>
+                </div>
+
+                <h3 class="font-bold text-gray-700 mb-2 border-l-4 border-blue-500 pl-2">定期的な一斉お知らせ配信内容（予定案）</h3>
+                <p class="text-sm mb-2 text-gray-600">ルール徹底のため、以下の内容は定期的にお便りやお知らせで配信します。</p>
+                <ul class="list-disc ml-5 text-sm space-y-1 bg-white border border-gray-200 p-4 rounded">
+                    <li>朝夕の打刻について（時間外扱いになること、アプリがない外部の方のお迎え方法）</li>
+                    <li>休みチェック表（紙）とコドモン入力の併用について</li>
+                    <li>病欠時の詳細記入（備考欄）について</li>
+                    <li>コドモン連絡の送信締切（朝8:45）について</li>
+                    <li>所在アラートの重要性について</li>
+                    <li>お迎え時間の登録は「イレギュラーのみ」でよいこと</li>
+                </ul>
+
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+</body>
+</html>
