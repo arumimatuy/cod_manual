@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問（FAQ）｜コドモン運用マニュアル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f3f4f6; }
+        .faq-item { border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question {
+            width: 100%; background: none; border: none;
+            padding: 1rem 0; text-align: left; cursor: pointer;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            font-size: 0.9rem; font-weight: 700; color: #1e3a8a;
+            line-height: 1.6; font-family: 'Noto Sans JP', sans-serif;
+        }
+        .faq-question:hover { color: #2563eb; }
+        .faq-chevron { flex-shrink: 0; margin-top: 3px; transition: transform 0.25s; color: #9ca3af; }
+        .faq-item.open .faq-chevron { transform: rotate(90deg); color: #2563eb; }
+        .faq-answer {
+            display: none; padding: 0 0 1rem 2rem;
+            font-size: 0.85rem; color: #374151; line-height: 1.85;
+        }
+        .faq-item.open .faq-answer { display: block; }
+        .tag {
+            display: inline-block; font-size: 0.7rem; font-weight: 700;
+            padding: 2px 10px; border-radius: 9999px; margin-bottom: 0.5rem;
+        }
+        .tag-warn { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
+        .tag-ok   { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; }
+        .tag-info { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+        .tag-paper{ background: #fefce8; color: #92400e; border: 1px solid #fcd34d; }
+        .section-card {
+            background: white; border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+            padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .cat-title {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+            text-transform: uppercase; color: #6b7280;
+            padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 0; display: flex; align-items: center; gap: 0.4rem;
+        }
+        .search-input {
+            width: 100%; border: 1px solid #d1d5db; border-radius: 0.375rem;
+            padding: 0.6rem 1rem 0.6rem 2.5rem; font-size: 0.875rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            outline: none; transition: border-color 0.15s;
+        }
+        .search-input:focus { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
+        .back-link { color: #2563eb; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.3rem; }
+        .back-link:hover { text-decoration: underline; }
+        .no-result { color: #9ca3af; font-size: 0.875rem; padding: 1.5rem 0; text-align: center; }
+        .highlight { background: #fef9c3; border-radius: 2px; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+        <a href="index.html" class="back-link text-blue-100 hover:text-white mb-3 inline-flex">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> マニュアルに戻る
+        </a>
+        <h1 class="text-2xl sm:text-3xl font-bold mb-1">よくある質問（FAQ）</h1>
+        <p class="text-blue-100 text-sm">コドモン運用 ｜ 幌北中央保育園 職員向け ｜ 2026年4月</p>
+    </header>
+
+    <!-- Search -->
+    <div class="section-card !py-4">
+        <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input type="text" id="search" class="search-input" placeholder="キーワードで検索（例：打刻、欠席、アラート…）" oninput="filterFaq(this.value)">
+        </div>
+        <p class="text-xs text-gray-400 mt-2 pl-1">全 <span id="visible-count">22</span> 問 表示中</p>
+    </div>
+
+    <div id="no-result" class="no-result hidden">該当する質問が見つかりませんでした。</div>
+
+    <!-- ① 保護者連絡の受付 -->
+    <div class="section-card" data-category="renraku">
+        <div class="cat-title"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 保護者連絡の受付</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                保護者からの欠席・遅刻連絡は、いつまでアプリで受け付けますか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-info">締切</span><br>
+                当日朝 <strong>8:45まで</strong> がアプリ受付の締め切りです。8:45以降の連絡は原則 <strong>電話（基本9:15まで）</strong> でお願いするよう保護者に伝えてください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                8:45以降にアプリで欠席連絡が来た場合はどうしますか？
+            </button>
+            <div class="faq-answer">
+                基本は電話連絡を求めます。ただし職員がコドモン入力に随時対応できる状況であれば対応してもOKです。 ※園側の運用レベルに応じて随時見直し。<br><br>
+                <span class="tag tag-warn">注意</span><br>
+                締切前（8:45以前）の休み連絡にアラートが飛ばないよう、<strong>確認済み処理を忘れずに</strong>行ってください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                急なお迎え変更や当日の時間外保育は、アプリで受け付けますか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">電話のみ</span><br>
+                急なお迎え変更・当日の時間外保育・緊急事項は <strong>常に電話のみ</strong> の対応です。アプリでは受け付けません。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                8:45時点で連絡帳（あか・もも・き）の送信がない保護者にはどう対応しますか？
+            </button>
+            <div class="faq-answer">
+                リマインドメッセージを送信します。「お知らせ一斉配信」に<strong>テンプレートが登録済み</strong>です。
+            </div>
+        </div>
+    </div>
+
+    <!-- ② デイリーボード・所在確認 -->
+    <div class="section-card" data-category="daily">
+        <div class="cat-title"><i data-lucide="sun" class="w-3.5 h-3.5"></i> デイリーボード・所在確認</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                朝の連絡確認と所在確認は、誰が何時に行いますか？
+            </button>
+            <div class="faq-answer">
+                3段階の連携で行います。<br><br>
+                <div class="border-l-4 border-blue-400 pl-3 py-1 bg-blue-50 rounded-r mb-2">
+                    <strong class="text-blue-800">① 7:00〜9:00｜クラス保育士</strong><br>
+                    8:45までの連絡を確認し「確認済」に。追加対応は必要な場合は園長まで。園長が9時頃に印刷します。
+                </div>
+                <div class="border-l-4 border-green-400 pl-3 py-1 bg-green-50 rounded-r mb-2">
+                    <strong class="text-green-800">② 9:00〜9:30｜チェック番</strong><br>
+                    未確認連絡・締切後の連絡をクラスに確認して対応。
+                </div>
+                <div class="border-l-4 border-orange-400 pl-3 py-1 bg-orange-50 rounded-r">
+                    <strong class="text-orange-800">③ 9:15〜9:30｜チェック番</strong><br>
+                    デイリーボードで在籍・欠席・アラートを確認。打刻漏れ園児は手動打刻。
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                朝の早い時間帯に人数が合わないのですが、バグですか？
+            </button>
+            <div class="faq-answer">
+                バグではありません。早い時間帯は「未登園」「連絡確認前」「未打刻」が混在します。<strong>9:15〜9:30にあらためてデイリーボードで確認</strong>してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                9:30に「登園予定のご確認」メッセージが自動送信されるのはどんな場合ですか？
+            </button>
+            <div class="faq-answer">
+                以下の状態の家庭に自動配信されます。
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                    <li>未登園・遅刻</li>
+                    <li>連絡帳未反映（8:45以降の連絡で職員未対応）</li>
+                    <li>休み連絡がコドモン未登録（紙には書いたがアプリ未入力）</li>
+                    <li>朝の打刻漏れ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                「紙には休みを書いたがコドモン未登録」の家庭に、職員が代わりに入力してもいいですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">代理入力NG</span><br>
+                「都合欠」の代理登録はしないでください。保護者への折り返し連絡の際に「お手数ですがどちらもお願いします」と協力を依頼してください。
+            </div>
+        </div>
+    </div>
+
+    <!-- ③ 登降園打刻 -->
+    <div class="section-card" data-category="dakoku">
+        <div class="cat-title"><i data-lucide="smartphone" class="w-3.5 h-3.5"></i> 登降園打刻</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                打刻はお子さんがやってもいいですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">禁止</span><br>
+                打刻操作は必ず<strong>保護者（大人）</strong>が行ってください。お子さんの操作は禁止です。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                アプリを持っていない祖父母やデイのスタッフが送迎に来た場合は？
+            </button>
+            <div class="faq-answer">
+                事務室内のiPadで「コドモン登降園」（別アプリ）を使って<strong>手動打刻</strong>してください。<br><br>
+                <span class="tag tag-warn">注意</span><be>
+                デイリーボードやお知らせを配信するアプリ「コドモン（管理画面）」は個人情報の塊です。<strong>職員以外は触らせないでください。</strong>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                兄弟姉妹が一方だけ休む場合の打刻は？
+            </button>
+            <div class="faq-answer">
+                打刻画面でお休みするお子さんの<strong>チェックを外してから打刻</strong>してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                降園時に打刻漏れがあった場合、職員が代わりに修正してもいいですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">原則禁止</span><br>
+                打刻漏れは自動的に「時間外保育」扱いとなります。職員による善意の修正は原則禁止です。<br><br>
+                <div class="bg-red-50 border border-red-200 rounded p-3 mt-2 text-sm">
+                    <p><strong>17:59まで</strong>に「コドモン＞その他連絡」または電話で連絡があった場合のみ、手動修正OK。</p>
+                    <p class="mt-1"><strong>18:00以降</strong>の連絡は修正不可。時間外保育として処理します。</p>
+                </div>
+                <p class="mt-2 text-gray-500 text-xs">電話で連絡を受けた場合も対応しますが「なるべくコドモンの『その他連絡』からご連絡を」と伝えてください（送信履歴が残り伝達ミス防止のため）。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                全員登園してるのに人数が合わない・QRを何度も打刻してしまいました
+            </button>
+            <div class="faq-answer">
+                在園時間の棒グラフで、誤って退園になっている子を探し、<strong>退園時刻をクリアして修正</strong>してください。
+            </div>
+        </div>
+    </div>
+
+    <!-- ④ 病欠連絡 -->
+    <div class="section-card" data-category="byoketsu">
+        <div class="cat-title"><i data-lucide="thermometer" class="w-3.5 h-3.5"></i> 病欠連絡</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                病欠の連絡を受けたとき、何を確認すればいいですか？
+            </button>
+            <div class="faq-answer">
+                備考欄に以下の3点が記載されているか確認してください。<br><br>
+                <table class="w-full text-sm border border-gray-200 rounded overflow-hidden">
+                    <tr class="border-b border-gray-200">
+                        <th class="bg-gray-50 p-2 text-left font-bold w-1/3">【経過】</th>
+                        <td class="p-2">いつ頃から、どのような症状か</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <th class="bg-gray-50 p-2 text-left font-bold">【現在の状況】</th>
+                        <td class="p-2">熱の有無・症状の程度・元気・食欲など</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-gray-50 p-2 text-left font-bold">【受診予定】</th>
+                        <td class="p-2">受診済み / 本日受診予定 / 様子見 など</td>
+                    </tr>
+                </table>
+                <p class="mt-2">未入力・不十分な場合は電話連絡を要請するメッセージを送信してください（テンプレあり）。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                病欠備考欄が空欄だった場合のメッセージはどこにありますか？
+            </button>
+            <div class="faq-answer">
+                「お知らせ一斉配信」の<strong>テンプレート</strong>に登録されています。テンプレートから選択して送信、または園長まで。
+            </div>
+        </div>
+    </div>
+
+    <!-- ⑤ お知らせ・配信 -->
+    <div class="section-card" data-category="oshirase">
+        <div class="cat-title"><i data-lucide="send" class="w-3.5 h-3.5"></i> お知らせ・配信</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                園長不在時に急ぎのお知らせを出したい場合は？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-ok">対応OK</span><br>
+                忘れ物など急ぎの連絡は「緊急連絡」機能で配信してOKです。事後に「配信しました」と園長に報告してください。<br><br>
+                急ぎでない場合は、園長デスクのiPadから「承認よろしく」と依頼してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                よく使うお知らせ文はどこにありますか？
+            </button>
+            <div class="faq-answer">
+                忘れ物などのよく使う文言は「お知らせ一斉配信」＞お知らせ作成画面＞右上「テンプレート文読み込み」に登録済みです。追加したいものがあれば園長まで。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                ドキュメンテーションを特定の家庭だけに配信したい場合は？
+            </button>
+            <div class="faq-answer">
+                配信先を「参加者のみ」「個別」「クラス全員」など細かく指定できます。複数の活動やお知らせを同時配信する場合も、項目ごとに配信先を分けてまとめて送ることが可能です。
+            </div>
+        </div>
+    </div>
+
+    <!-- ⑥ 紙運用・保護者サポート -->
+    <div class="section-card" data-category="kami">
+        <div class="cat-title"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> 紙運用・保護者サポート</div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                土曜保育や時間外保育の申込は、アプリからできますか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-paper">紙のみ</span><br>
+                アプリでは受け付けていません。保護者には<strong>園内の紙のボードへの記入</strong>を案内してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                事前にわかっているお休みは、アプリだけで連絡すればいいですか？
+            </button>
+            <div class="faq-answer">
+                事前にわかっているお休みは「アプリ」と「紙（クラスの予定表）」の<strong>両方</strong>への記入が必要です。保護者に両方お願いするよう案内してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                「家族（祖父母など）もアプリを使いたい」と言われた場合は？
+            </button>
+            <div class="faq-answer">
+                園発行IDではなく、<strong>パパ・ママのアプリ内にある「家族の招待機能」</strong>を使うよう案内してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                操作方法がわからない保護者への対応は？
+            </button>
+            <div class="faq-answer">
+                保護者の画面を一緒に見ながらサポートしてください。詳しい使い方は保護者向けリンク集（<a href="https://x.gd/RHl8D" class="text-blue-600 underline" target="_blank">https://x.gd/RHl8D</a>）にまとまっています。
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-xs text-gray-400 py-4">
+        幌北中央保育園 ｜ 職員専用内部資料 ｜ 2026年4月
+    </div>
+
+</div>
+
+<script>
+lucide.createIcons();
+
+function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+}
+
+function filterFaq(val) {
+    const q = val.trim().toLowerCase();
+    let total = 0;
+
+    document.querySelectorAll('.section-card[data-category]').forEach(card => {
+        let cardVisible = false;
+        card.querySelectorAll('.faq-item').forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const match = !q || text.includes(q);
+            item.style.display = match ? '' : 'none';
+            if (match) { cardVisible = true; total++; }
+            if (match && q) item.classList.add('open');
+            if (!q) item.classList.remove('open');
+        });
+        card.style.display = cardVisible ? '' : 'none';
+    });
+
+    document.getElementById('visible-count').textContent = q ? total : 22;
+    document.getElementById('no-result').classList.toggle('hidden', total > 0 || !q);
+}
+</script>
+</body>
+</html>
