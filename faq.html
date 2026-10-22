@@ -65,7 +65,7 @@
             <i data-lucide="arrow-left" class="w-4 h-4"></i> マニュアルに戻る
         </a>
         <h1 class="text-2xl sm:text-3xl font-bold mb-1">よくある質問（FAQ）</h1>
-        <p class="text-blue-100 text-sm">コドモン運用 ｜ 幌北中央保育園 職員向け ｜ 2026年4月14日</p>
+        <p class="text-blue-100 text-sm">コドモン運用 ｜ 幌北中央保育園 職員向け ｜ 2026-10-22</p>
     </header>
 
     <!-- Search -->
@@ -74,7 +74,7 @@
             <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
             <input type="text" id="search" class="search-input" placeholder="キーワードで検索（例：打刻、欠席、アラート…）" oninput="filterFaq(this.value)">
         </div>
-        <p class="text-xs text-gray-400 mt-2 pl-1">全 <span id="visible-count">24</span> 問 表示中</p>
+        <p class="text-xs text-gray-400 mt-2 pl-1">全 <span id="visible-count">33</span> 問 表示中</p>
     </div>
 
     <div id="no-result" class="no-result hidden">該当する質問が見つかりませんでした。</div>
@@ -214,6 +214,23 @@
                 「都合欠」の代理登録はしないでください。保護者への折り返し連絡の際に「お手数ですがどちらもお願いします」と協力を依頼してください。　※電話対応後の手動登録はOKです。
             </div>
         </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                コドモンが止まったら、どうしますか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">停止時</span>
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                    <li>打刻のない子は、目で見て所在を確認する。</li>
+                    <li>欠席・遅刻は電話で受け、紙に書いておく。</li>
+                    <li>所在が分からない子は、保護者へ電話する。</li>
+                    <li>復旧したら、紙の記録を各画面で過去の日付を選んで入力する。</li>
+                    <li>停止の直後は、9:30の自動メッセージ（所在確認アラート）が止まる日があるので、人の目で確かめる。</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- ③ 登降園打刻 -->
@@ -237,9 +254,44 @@
                 アプリを持っていない祖父母やデイのスタッフが送迎に来た場合は？
             </button>
             <div class="faq-answer">
-                事務室内のiPadで「コドモン登降園」アプリを使って<strong>手動打刻</strong>してください。<br><br>
+                アプリのない祖父母などが来たときは、<strong>職員が入力</strong>してください。デイサービス・習い事の外部スタッフは、<strong>園からお願いした家庭の分だけ</strong>、事務室内のiPadで「コドモン登降園」アプリを使って<strong>手動打刻</strong>できます。<br><br>
                 <span class="tag tag-warn">注意</span><br>
                 事務室のコドモン管理画面（ブラウザ）は個人情報の塊です。<strong>職員以外は触らせないでください。</strong>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                保護者がスマホを忘れた・アプリがない家族が来た場合は？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">保護者の手動打刻はしない</span><br>
+                保護者にタブレット（入口・事務室のiPad）で手動打刻をしてもらうことはしません。スマホを忘れた保護者や、アプリのない祖父母などが来たときは、<strong>職員が入力</strong>してください。<br><br>
+                <span class="tag tag-note">例外</span><br>
+                園からお願いした家庭の外部スタッフ（デイサービス・習い事の送迎）だけは、手動打刻できます。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                行事の日の打刻は？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-info">行事の日</span><br>
+                行事の日も打刻はします。保護者に手動打刻はお願いしません。運動会のように全員が一斉に帰る行事では、帰りの打刻は園があとでまとめて入力します。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                玄関のICカードとコドモンの打刻は同じものですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">別もの</span><br>
+                玄関のICカードは玄関の鍵（解錠）に使うものです。コドモンの打刻とは別で、打刻は今までどおりQRで行います。
             </div>
         </div>
 
@@ -346,6 +398,29 @@
                 配信先を「参加者のみ」「個別」「クラス全員」など細かく指定できます。複数の活動やお知らせを同時配信する場合も、項目ごとに配信先を分けてまとめて送ることが可能です。
             </div>
         </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                お知らせの文字の大きさがばらばら・空白が大きいのはなぜですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-note">配信文の組み方</span><br>
+                <strong>空白が大きい：</strong>Enterを2回重ねていませんか。段落の区切りはEnter1回、段落の中の改行はShift+Enterにしてください。<br>
+                <strong>文字の大きさがばらばら：</strong>貼り付けると混ざりやすいので、最後に「全選択 → 8pt → 全選択 → 14pt」とそろえてください（園の通常は14pt）。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                お知らせの件名に【】を付けてもいいですか？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-warn">緊急・重大なときだけ</span><br>
+                件名の【】は、緊急・重大なときだけ付けます。
+            </div>
+        </div>
     </div>
 
     <!-- ⑥ 紙運用・保護者サポート -->
@@ -366,10 +441,36 @@
         <div class="faq-item">
             <button class="faq-question" onclick="toggle(this)">
                 <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                土曜登園の登録は、誰がいつ行いますか？
+            </button>
+            <div class="faq-answer">
+                土曜登園の予定が出たら、<strong>木曜の遅番</strong>が登録します。デイリーボードで対象の土曜日に移動し、園児の「出欠状況」の鉛筆マークか棒グラフから、登降園（予定）を「有り」にして予定の時刻を入れ、保存します。手順はマニュアルの<a href="index.html#sec9" class="text-blue-600 underline">「9. 土曜登園の登録」</a>にあります。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
                 事前にわかっているお休みは、アプリだけで連絡すればいいですか？
             </button>
             <div class="faq-answer">
                 事前にわかっているお休みは「アプリ」と「紙（クラスの予定表）」の<strong>両方</strong>への記入が必要です。保護者に両方お願いするよう案内してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                お休みが「クラスのチェック表」にあるのに、コドモンに入っていない場合は？
+            </button>
+            <div class="faq-answer">
+                場面によって対応が変わります。
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                    <li><strong>A　チェック表にあるが未入力：</strong>出席確認の電話の際に「コドモンにも入力を」と、対象の家庭だけにお願いする。</li>
+                    <li><strong>B　口頭で伝えられた：</strong>その場で「コドモンにも入力を」とお願いする。（その場で入れられるなら「入れておきますね」でもよい）</li>
+                    <li><strong>C　当日朝の休み連絡（チェック番がいる時間）：</strong>基本は職員が「入れておきますね」と代わりに入力する。保育に入りながら受けた時は、無理せず保護者に入力をお願いする。</li>
+                    <li><strong>D　翌日以降の休みの電話：</strong>Bと同じ。</li>
+                </ul>
             </div>
         </div>
 
@@ -392,16 +493,29 @@
                 保護者の画面を一緒に見ながらサポートしてください。詳しい使い方は保護者向けリンク集（<a href="https://x.gd/RHl8D" class="text-blue-600 underline" target="_blank">https://x.gd/RHl8D</a>）にまとまっています。
             </div>
         </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggle(this)">
+                <i data-lucide="chevron-right" class="faq-chevron w-4 h-4"></i>
+                写真販売で「カートが空になった」と言われたら？
+            </button>
+            <div class="faq-answer">
+                <span class="tag tag-info">入り直し</span><br>
+                SafariかChromeを保護者ご自身で開いて、URLから入り直してもらってください。コドモンのアプリの中から開くと、ログインが引き継がれず、カートが消えます。「ログインしてから入室」の順でお願いしてください。
+            </div>
+        </div>
     </div>
 
     <div class="text-center text-xs text-gray-400 py-4">
-        幌北中央保育園 ｜ 職員専用内部資料 ｜ 2026年4月
+        幌北中央保育園 ｜ 職員専用内部資料 ｜ 2026年10月 更新版
     </div>
 
 </div>
 <script>
 lucide.createIcons();
 function toggle(btn) { btn.closest('.faq-item').classList.toggle('open'); }
+const totalCount = document.querySelectorAll('.section-card[data-category] .faq-item').length;
+document.getElementById('visible-count').textContent = totalCount;
 function filterFaq(val) {
     const q = val.trim().toLowerCase();
     let total = 0;
@@ -416,7 +530,7 @@ function filterFaq(val) {
         });
         card.style.display = cardVisible ? '' : 'none';
     });
-    document.getElementById('visible-count').textContent = q ? total : 24;
+    document.getElementById('visible-count').textContent = q ? total : totalCount;
     document.getElementById('no-result').classList.toggle('hidden', total > 0 || !q);
 }
 </script>
